@@ -1,0 +1,41 @@
+#初始化git仓库:
+git init
+
+#提交添加的或修改的文件到git仓库:
+git add <file>
+git commit -m "..."
+(每次修改如果不add到暂存区就不会加入到commit中)
+
+#查看仓库状态:
+git status
+
+#查看修改:
+git diff <file>
+
+#查看历史变动:
+git log [--ptrtty=oneline]
+
+#回退到上一版本:
+git reset --hard HEAD^
+(当前版本HEAD,上一版本HEAD^,上上版本HEAD^^,上一百个版本HEAD~100)
+#回到未来版本:
+git reset --hard <commit id>
+
+#查看历史命令:
+git reflog
+
+工作区:可见的目录及文件;
+暂存区:stage,工作区进行add后进入暂存区;
+分支master:默认分支,commit后从暂存区进入分支,HEAD指向分支最新版本;
+
+#撤销工作区修改:
+git checkout -- <file>
+#add之后撤销暂存区的修改(然后用上一命令撤销工作区修改):
+git reset HEAD <file>
+
+#工作区删除文件后再删除版本库中文件:
+git rm <file>
+git commit -m ""
+#从工作区恢复删除的文件:
+git checkout -- <file>
+
