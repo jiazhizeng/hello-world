@@ -43,9 +43,32 @@ git checkout -- <file>
 ssh-keygen -t rsa -C "email addr"
 把id_rsa.pub的内容放到github account setting的ssh keys里
 
-#添加远程仓库(先有本地库，然后创建远程库):
+#创建远程库(带readme),然后clone到本地库
+git clone <git链接>
+
+#添加远程仓库(先有本地库，然后创建不带readme的远程库):
 git remote add <远程库名> <远程库ssh链接>
 
 #本地库内容推送到远程:
 git push -u <远程库名> master  (首次建立关联)
 git push <远程库名> master
+
+#创建并切换分支:
+git checkout -b <分支名>
+#相当于:
+git branch <分支名>
+git checkout <分支名>
+
+#列出所有分支,当前分支会带*号:
+git branch
+
+#合并分支到当前分支(快进模式):
+git merge <分支名>
+
+#删除分支:
+git branch -d <分支名>
+
+#查看分支合并图:
+git log --graph
+git log --graph --pretty=oneline --abbrev-commit
+当git无法自动合并时，要先解决冲突再提交，合并完成
