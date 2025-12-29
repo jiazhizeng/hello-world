@@ -1,7 +1,7 @@
 ```mermaid
 graph LR
     User((用户/浏览器))
-    CDN[静态资源 CDN\n(HTML/JS/CSS)]
+    CDN["静态资源 CDN\n(HTML/JS/CSS)"]
     
     subgraph "Golang 服务端 (高并发)"
         API[API 网关]
