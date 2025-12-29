@@ -1,3 +1,4 @@
+```mermaid
 graph LR
     User((用户)) -->|请求| CGI[Python CGI 脚本]
     subgraph Server Side
